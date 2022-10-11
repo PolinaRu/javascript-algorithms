@@ -13,14 +13,16 @@ function reverseWords(str) {
   let world = "";
 
   for (let char of str) {
-    if (char != ' ') {
-        world += char;
+    if (char != " ") {
+      world += char;
     } else {
-        str1 += world;
-        world = '';
+      str1 = world + " " + str1;
+      world = "";
     }
   }
-  str1 += world;
+
+  str1 = world + " " + str1;
+  str1 = str1.slice(0, str1.length - 1);
 
   return str1;
 }
