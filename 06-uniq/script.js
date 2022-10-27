@@ -8,7 +8,15 @@
 */
 
 function uniq(arr) {
-    // Напишите код здесь
+  const res = [];
+
+  for (let i in arr) {
+    if (res.indexOf(arr[i]) === -1) {
+      res.push(arr[i]);
+    }
+  }
+
+  return res;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
