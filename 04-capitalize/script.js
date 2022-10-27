@@ -4,12 +4,21 @@
  * Напишите функцию capitalize(str). Функция должна возвращать новую
  * строку каждое слово в которой начинается с прописной буквы.
  *
-*/
+ */
 
 function capitalize(str) {
-    // Напишите код здесь
+  if (str.length > 1) {
+    const res = str.split(" ");
+    for (let i in res) {
+      if (res[i] !== ' ' && res[i] > '') {
+        res[i] = res[i][0].toUpperCase() + res[i].slice(1);
+      }
+    }
+    return res.join(" ");
+  }
+  return str;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
-console.log(capitalize('молодость всё простит')); // "Молодость Всё Простит"
+//console.log(capitalize("слово ")); // "молодость всё простит Молодость Всё Простит"
