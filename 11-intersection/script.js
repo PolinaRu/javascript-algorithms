@@ -8,7 +8,19 @@
 */
 
 function intersection(arr1, arr2) {
-    // Напишите код здесь
+  const res = [];
+  let find = arr2.slice();
+  if (arr1.length > arr2.length) {
+    find = arr1.slice();
+  }
+
+  for (let i in find) {
+    if (arr1.includes(find[i]) && arr2.includes(find[i]) && !res.includes(find[i])) {
+      res.push(find[i]);
+    }
+  }
+
+  return res;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
