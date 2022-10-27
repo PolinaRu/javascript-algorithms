@@ -3,11 +3,28 @@
  *
  * Напишите функцию primes(n). Её единственный аргумент — целое число n.
  * Функция должна возвращать массив простых чисел от 2 до n.
- * 
-*/
+ *
+ */
+function isPrime(n) {
+  if (n <= 1) {
+    return false;
+  }
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
 
 function primes(num) {
-    // Напишите код здесь
+  const res = [];
+  for (let i=2; i<=num; i++) {
+    if (isPrime(i)){
+      res.push(i);
+    }
+  }
+  return res;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
